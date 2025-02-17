@@ -1,0 +1,27 @@
+$Dorado: #D4AF37;
+$Beigesuave: #F5F5DC; 
+$colors: #fff, #fff,#fff, #fff, #fff;
+$colorDoradoFondo: #E5C290;
+$colorCafe:#a18262;
+$color-blanco: #fff;
+$color-fondo-forms: #C4A77D;
+$beige-gris: #E0D5B7;
+$color-gris: #8C8578;
+
+
+
+@mixin flex-box ($justify:center, $aling:center){
+    display: flex;
+    justify-content: $justify;
+    align-items:$aling;
+}
+@mixin fontTitle{
+    font-family: "Cinzel", serif;
+}
+@mixin fontText{
+    font-family: "Playfair Display", serif;
+}
+@mixin fontTextSecundary{
+    font-family:  "Roboto", serif;
+}
+
