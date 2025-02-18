@@ -14,198 +14,205 @@
     <link rel="icon" type="image/png" href="assets/iconfav.png">
 </head>
 <body>
-    <header class="header">
-        <div class="overlay"></div> 
-            <video class="video-header" autoplay muted loop playsinline>
-                <source src="img/video-fondo.mp4" type="video/mp4">
-                Tu navegador no soporta videos.
-            </video>
-        <div class="contenido">
-            <p class="header__title tracking-in-expand">¡Nos Casamos!</p>
-            <p class="header__title header__title-name tracking-in-expand">Margarita & <br> Roberto</p>  
-        </div>
-        
-        <div class="contenido header__music">
-           <button class="header__music-button" id="playButton">Presiona aquí</button>
-           <audio  id="audioElement" src="assets/cancion-fondo.mp3"></audio>
-        </div>
-    </header>
+    <div id="preloader">
+        <div class="half left"></div>
+        <div class="half right"></div>
+    </div>
 
-    <main class="main">
-        <section class="main__invitacion">
-            <h2 class="main__invitacion-title tracking-in-expand-fwd-bottom">Estás invitado</h2>
-            <p class="main__invitacion-text tracking-in-expand-fwd-bottom">Nos embarcamos a una nueva aventura, y nuestra boda no estaría completa sin la presencia de nuestros seres queridos, así que queremos que estés allí con nosotros.</p>
-            <img class="img-animation" src="img/foto-prueba.JPG" alt="foto">
-            <p class="main__invitacion-text-edit tracking-in-expand-fwd-bottom">Con la bendición de Dios y nuestros padres</p>
-        </section>
-
-        <section class="main__countdown main__contador">
-            <h2 class="main__contador-title-1 tracking-in-expand-fwd-bottom">Nuestra boda será el sabado:</h2>
-            <div class="main__contador-fecha tracking-in-expand-fwd-bottom">
-                <p class="main__contador-fecha-num">02</p>
-                <span class="main__contador-fecha-span"></span>
-                <p class="main__contador-fecha-num">Agosto</p>
-                <span class="main__contador-fecha-span"></span>
-                <p class="main__contador-fecha-num">2025</p>
+    <div id="content" class="hidden">
+        <header class="header">
+            <div class="overlay"></div> 
+                <video class="video-header" autoplay muted loop playsinline>
+                    <source src="img/video-fondo.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+            <div class="contenido">
+                <p class="header__title tracking-in-expand">¡Nos Casamos!</p>
+                <p class="header__title header__title-name tracking-in-expand">Margarita & <br> Roberto</p>  
             </div>
-            <p class="main__countdown-title main__contador-title tracking-in-expand-fwd-bottom">Solo faltan:</p>
-                <div class="contador tracking-in-expand-fwd-bottom">
-                    <div class="unidad">
-                        <span id="dias">00</span>
-                        <p>Días</p>
-                    </div>
+            
+            <div class="contenido header__music">
+            <button class="header__music-button" id="playButton">Presiona aquí</button>
+            <audio  id="audioElement" src="assets/cancion-fondo.mp3"></audio>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="main__invitacion">
+                <h2 class="main__invitacion-title tracking-in-expand-fwd-bottom">Estás invitado</h2>
+                <p class="main__invitacion-text tracking-in-expand-fwd-bottom">Nos embarcamos a una nueva aventura, y nuestra boda no estaría completa sin la presencia de nuestros seres queridos, así que queremos que estés allí con nosotros.</p>
+                <img class="img-animation" src="img/foto-prueba.JPG" alt="foto">
+                <p class="main__invitacion-text-edit tracking-in-expand-fwd-bottom">Con la bendición de Dios y nuestros padres</p>
+            </section>
+
+            <section class="main__countdown main__contador">
+                <h2 class="main__contador-title-1 tracking-in-expand-fwd-bottom">Nuestra boda será el sabado:</h2>
+                <div class="main__contador-fecha tracking-in-expand-fwd-bottom">
+                    <p class="main__contador-fecha-num">02</p>
+                    <span class="main__contador-fecha-span"></span>
+                    <p class="main__contador-fecha-num">Agosto</p>
+                    <span class="main__contador-fecha-span"></span>
+                    <p class="main__contador-fecha-num">2025</p>
+                </div>
+                <p class="main__countdown-title main__contador-title tracking-in-expand-fwd-bottom">Solo faltan:</p>
+                    <div class="contador tracking-in-expand-fwd-bottom">
                         <div class="unidad">
-                        <span id="horas">00</span>
-                    <p>Horas</p>
+                            <span id="dias">00</span>
+                            <p>Días</p>
+                        </div>
+                            <div class="unidad">
+                            <span id="horas">00</span>
+                        <p>Horas</p>
+                        </div>
+                        <div class="unidad">
+                            <span id="minutos">00</span>
+                            <p>Minutos</p>
+                        </div>
+                        <div class="unidad">
+                            <span id="segundos">00</span>
+                            <p>Segundos</p>
+                        </div>
                     </div>
-                    <div class="unidad">
-                        <span id="minutos">00</span>
-                        <p>Minutos</p>
+
+                    <div class="main__contador-box-calendar tracking-in-expand-fwd-bottom">
+                        <a class="main__contador-calendar" href="assets/Boda Margarita & Roberto.ics"> 
+                            <object type="image/svg+xml" data="assets/icon-calendar.svg">
+                                Tu navegador no soporta SVG.
+                            </object>
+                            Guarda la fecha
+                        </a>
                     </div>
-                    <div class="unidad">
-                        <span id="segundos">00</span>
-                        <p>Segundos</p>
+            </section>
+
+            <section class="main__lugar tracking-in-expand-fwd-bottom">
+                <article class="main__lugar-info">
+                    <div class="main__lugar-box-text">
+                        <h2 class="main__lugar-title">Lugar</h2>
+                        <p class="main__lugar-text">Santuario de Guadalupe <br> <span class="main__lugar-text-span">6:00 P.M. - 6:30 P.M.</span></p>
+                    </div>
+
+                    <div class="main__lugar-box-button">
+                        <a class="main__lugar-button" href="https://maps.app.goo.gl/HVfjqLCgveq2XtH97">Ver ubicación</a>
+                    </div>
+                </article>
+                    
+                <article class="main__lugar-foto">
+                    
+                </article>
+            </section>
+
+            <section class="main__recepcion tracking-in-expand-fwd-bottom">
+                <article class="main__recepcion-foto">
+
+                </article>
+
+                <article class="main__recepcion-info">
+                    <div>
+                        <h2 class="main__recepcion-title">Recepción</h2>
+                        <p class="main__recepcion-text">Aqui va la ubi <br> <span class="main__recepcion-text-span">6:00 P.M. - 6:30 P.M.</span></p>
+                    </div>
+
+                    <div>
+                        <a class="main__recepcion-button" href="">Ver ubicación</a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="main__vestimenta tracking-in-expand-fwd-bottom">
+                <h2 class="main__vestimenta-title">Vestimenta</h2>
+                <div class="main__vestimenta-box-text">
+                    <p class="main__vestimenta-text">Vestimenta formal para hombres y vestido largo para mujeres</p>
+                    <p class="main__vestimenta-text">Evita el color blanco, beige y café en tu eleccion de vestimenta en honor a nuestra celebración</p>
+                    <p class="main__vestimenta-text-important">Evita los siguientes colores:</p>
+                </div>
+
+                <article class="main__vestimenta-box-color">
+                    <div class="main__vestimenta-colors main__vestimenta-color-1"></div>
+                    <div class="main__vestimenta-colors main__vestimenta-color-2"></div>
+                    <div class="main__vestimenta-colors main__vestimenta-color-3"></div>
+                </article>
+            </section>
+
+            <section class="main__album tracking-in-expand-fwd-bottom">
+                <video id="miVideo" class="main__album-video" muted autoplay playsinline>
+                    <source src="assets/beige-icon.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+                <h2 class="main__album-title">Comparte fotos</h2>
+                <p class="main__album-text">¡Sube fotos de la boda al álbum!</p>
+
+                <a class="main__album-button" href="https://drive.google.com/drive/folders/1W8daX8hXYh-v8dwZSE74lbGGh6ZDbo7q">Subir foto</a>
+            </section>
+
+            <div class="carousel-container tracking-in-expand-fwd-bottom">
+                <div class="carousel left">
+                    <div class="color-track">
+                        <div class="color-block color1"></div>
+                        <div class="color-block color2"></div>
+                        <div class="color-block color3"></div>
+                        <div class="color-block color4"></div>
+                        <div class="color-block color5"></div>
+                        <div class="color-block color6"></div>
+                        <div class="color-block color1"></div>
+                        <div class="color-block color2"></div>
+                        <div class="color-block color3"></div>
+                        <div class="color-block color4"></div>
+                        <div class="color-block color5"></div>
+                        <div class="color-block color6"></div>
                     </div>
                 </div>
-
-                <div class="main__contador-box-calendar tracking-in-expand-fwd-bottom">
-                    <a class="main__contador-calendar" href="assets/Boda Margarita & Roberto.ics"> 
-                        <object type="image/svg+xml" data="assets/icon-calendar.svg">
-                            Tu navegador no soporta SVG.
-                        </object>
-                        Guarda la fecha
-                    </a>
-                </div>
-        </section>
-
-        <section class="main__lugar tracking-in-expand-fwd-bottom">
-            <article class="main__lugar-info">
-                <div class="main__lugar-box-text">
-                    <h2 class="main__lugar-title">Lugar</h2>
-                    <p class="main__lugar-text">Santuario de Guadalupe <br> <span class="main__lugar-text-span">6:00 P.M. - 6:30 P.M.</span></p>
-                </div>
-
-                <div class="main__lugar-box-button">
-                    <a class="main__lugar-button" href="https://maps.app.goo.gl/HVfjqLCgveq2XtH97">Ver ubicación</a>
-                </div>
-            </article>
-                
-            <article class="main__lugar-foto">
-                
-            </article>
-        </section>
-
-        <section class="main__recepcion tracking-in-expand-fwd-bottom">
-            <article class="main__recepcion-foto">
-
-            </article>
-
-            <article class="main__recepcion-info">
-                <div>
-                    <h2 class="main__recepcion-title">Recepción</h2>
-                    <p class="main__recepcion-text">Aqui va la ubi <br> <span class="main__recepcion-text-span">6:00 P.M. - 6:30 P.M.</span></p>
-                </div>
-
-                <div>
-                    <a class="main__recepcion-button" href="">Ver ubicación</a>
-                </div>
-            </article>
-        </section>
-
-        <section class="main__vestimenta tracking-in-expand-fwd-bottom">
-            <h2 class="main__vestimenta-title">Vestimenta</h2>
-            <div class="main__vestimenta-box-text">
-                <p class="main__vestimenta-text">Vestimenta formal para hombres y vestido largo para mujeres</p>
-                <p class="main__vestimenta-text">Evita el color blanco, beige y café en tu eleccion de vestimenta en honor a nuestra celebración</p>
-                <p class="main__vestimenta-text-important">Evita los siguientes colores:</p>
-            </div>
-
-            <article class="main__vestimenta-box-color">
-                <div class="main__vestimenta-colors main__vestimenta-color-1"></div>
-                <div class="main__vestimenta-colors main__vestimenta-color-2"></div>
-                <div class="main__vestimenta-colors main__vestimenta-color-3"></div>
-            </article>
-        </section>
-
-        <section class="main__album tracking-in-expand-fwd-bottom">
-            <video id="miVideo" class="main__album-video" muted autoplay playsinline>
-                <source src="assets/beige-icon.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-            <h2 class="main__album-title">Comparte fotos</h2>
-            <p class="main__album-text">¡Sube fotos de la boda al álbum!</p>
-
-            <a class="main__album-button" href="https://drive.google.com/drive/folders/1W8daX8hXYh-v8dwZSE74lbGGh6ZDbo7q">Subir foto</a>
-        </section>
-
-        <div class="carousel-container tracking-in-expand-fwd-bottom">
-            <div class="carousel left">
-                <div class="color-track">
-                    <div class="color-block color1"></div>
-                    <div class="color-block color2"></div>
-                    <div class="color-block color3"></div>
-                    <div class="color-block color4"></div>
-                    <div class="color-block color5"></div>
-                    <div class="color-block color6"></div>
-                    <div class="color-block color1"></div>
-                    <div class="color-block color2"></div>
-                    <div class="color-block color3"></div>
-                    <div class="color-block color4"></div>
-                    <div class="color-block color5"></div>
-                    <div class="color-block color6"></div>
+                <div class="carousel right">
+                    <div class="color-track">
+                        <div class="color-block color4"></div>
+                        <div class="color-block color5"></div>
+                        <div class="color-block color6"></div>
+                        <div class="color-block color1"></div>
+                        <div class="color-block color2"></div>
+                        <div class="color-block color3"></div>
+                        <div class="color-block color4"></div>
+                        <div class="color-block color5"></div>
+                        <div class="color-block color6"></div>
+                        <div class="color-block color1"></div>
+                        <div class="color-block color2"></div>
+                        <div class="color-block color3"></div>
+                    </div>
                 </div>
             </div>
-            <div class="carousel right">
-                <div class="color-track">
-                    <div class="color-block color4"></div>
-                    <div class="color-block color5"></div>
-                    <div class="color-block color6"></div>
-                    <div class="color-block color1"></div>
-                    <div class="color-block color2"></div>
-                    <div class="color-block color3"></div>
-                    <div class="color-block color4"></div>
-                    <div class="color-block color5"></div>
-                    <div class="color-block color6"></div>
-                    <div class="color-block color1"></div>
-                    <div class="color-block color2"></div>
-                    <div class="color-block color3"></div>
+
+
+
+
+            <section class="main__form tracking-in-expand-fwd-bottom">
+                <h2 class="main__form-title">Confirmar <br> Asistencia</h2>
+                <p class="main__form-text">Por favor, confirma tu asistencia <br>
+                ¡Esperamos que estés allí!</p>
+                <form class="main__form-box"
+                    action="https://formspree.io/f/xkgozpoz"
+                    method="POST">
+                <div class="main__form-box-radio">
+                    <label class="main__form-box-label">
+                        <input class="main__form-box-label-radio" type="radio" name="asistencia"required value="si asistirá">
+                        Sí, allí estaré
+                    </label>
+
+                    <label class="main__form-box-label">
+                        <input class="main__form-box-label-radio" type="radio" name="asistencia"required value="no asistirá">
+                        No podré asistir
+                    </label>
                 </div>
-            </div>
-        </div>
+                    <label class="main__form-box-label">
+                        <input class="main__form-box-label-input-box" type="text" name="nombre" placeholder="Nombre y apellido" required>
+                    </label>
+                    <label class="main__form-box-label">
+                        <textarea class="main__form-box-label-texarea" name="mensaje" placeholder="Mensaje para los novios:" required></textarea>
+                    </label>
+                    
+                    <button class="main__form-button" type="submit">Enviar Respuesta</button>
+                </form>
+            </section>
 
-
-
-
-        <section class="main__form tracking-in-expand-fwd-bottom">
-            <h2 class="main__form-title">Confirmar <br> Asistencia</h2>
-            <p class="main__form-text">Por favor, confirma tu asistencia <br>
-            ¡Esperamos que estés allí!</p>
-            <form class="main__form-box"
-                action="https://formspree.io/f/xkgozpoz"
-                method="POST">
-            <div class="main__form-box-radio">
-                <label class="main__form-box-label">
-                    <input class="main__form-box-label-radio" type="radio" name="asistencia"required value="si asistirá">
-                    Sí, allí estaré
-                </label>
-
-                <label class="main__form-box-label">
-                    <input class="main__form-box-label-radio" type="radio" name="asistencia"required value="no asistirá">
-                    No podré asistir
-                </label>
-            </div>
-                <label class="main__form-box-label">
-                    <input class="main__form-box-label-input-box" type="text" name="nombre" placeholder="Nombre y apellido" required>
-                </label>
-                <label class="main__form-box-label">
-                    <textarea class="main__form-box-label-texarea" name="mensaje" placeholder="Mensaje para los novios:" required></textarea>
-                </label>
-                
-                <button class="main__form-button" type="submit">Enviar Respuesta</button>
-            </form>
-        </section>
-
-    </main>
+        </main>
+    </div>    
 
 </body>
 </html>

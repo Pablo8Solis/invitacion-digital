@@ -330,3 +330,41 @@ textarea:focus {
   from { transform: translateY(-50%); }
   to { transform: translateY(0); }
 }
+
+
+//animacion de carga
+
+body {
+  margin: 0;
+  
+}
+
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 9999;
+}
+
+.half {
+  width: 50%;
+  height: 100%;
+  background-color: $beige-gris; /* Color dorado */
+  position: absolute;
+  transition: transform 1.5s ease-in-out;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}

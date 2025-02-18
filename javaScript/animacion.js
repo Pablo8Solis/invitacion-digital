@@ -106,3 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// animacion de carga
+window.addEventListener("load", function () {
+  document.querySelector(".left").style.transform = "translateX(-100%)";
+  document.querySelector(".right").style.transform = "translateX(100%)";
+
+  setTimeout(() => {
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("content").classList.remove("hidden");
+  }, 2000); // Espera a que termine la animación
+});

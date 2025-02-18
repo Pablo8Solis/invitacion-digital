@@ -744,4 +744,37 @@ textarea:focus {
   to {
     transform: translateY(0);
   }
+}
+body {
+  margin: 0;
+}
+
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 9999;
+}
+
+.half {
+  width: 50%;
+  height: 100%;
+  background-color: #E0D5B7; /* Color dorado */
+  position: absolute;
+  transition: transform 1.5s ease-in-out;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
