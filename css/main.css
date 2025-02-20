@@ -70,9 +70,32 @@ img {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1rem;
+  text-align: center;
+}
+.main__invitacion-box-imagenes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0px;
+  width: 100%;
+  position: relative;
+}
+.main__invitacion-box-imagenes-img1 {
+  height: 30rem;
+  border-radius: 10px;
+}
+.main__invitacion-box-imagenes-img2 {
+  width: 19rem;
+  height: 14rem;
+  position: absolute;
+  top: 90%; /* En relación al contenedor */
+  max-width: 200rem;
+  z-index: 2;
+  border-radius: 10px;
 }
 .main__invitacion-title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-family: "Cinzel", serif;
   color: #D4AF37;
 }
@@ -94,6 +117,7 @@ img {
   font-size: 1.1rem;
   word-spacing: 0.1rem;
   font-style: italic;
+  margin-top: 11rem;
 }
 .main__contador {
   margin-top: 2rem;
@@ -140,7 +164,8 @@ img {
   margin-top: 2.5rem;
 }
 .main__contador-calendar {
-  background-color: #F5F5DC;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   padding: 0.5rem;
   font-size: 0.9rem;
   color: #000;
@@ -150,7 +175,6 @@ img {
   align-items: center;
   gap: 0.1rem;
   font-family: "Roboto", serif;
-  border-radius: 5px;
   width: 10rem;
 }
 .main__cuentaRegresiva {
@@ -208,8 +232,8 @@ img {
   text-decoration: none;
   color: #D4AF37;
   border: 1px solid #D4AF37;
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 0.8rem;
+  border-radius: 7px;
   font-family: "Roboto", serif;
   font-size: 0.9rem;
   display: flex;
@@ -237,11 +261,11 @@ img {
 }
 .main__recepcion-foto {
   flex: 1;
-  background-image: url(../img/templo.jpeg);
+  background-image: url(../img/recepcion-img1.jpg);
   height: 20rem;
   width: 20rem;
   background-size: cover;
-  background-position: 75%;
+  background-position: 70%;
 }
 .main__recepcion-title {
   font-size: 1.9rem;
@@ -263,8 +287,8 @@ img {
   text-decoration: none;
   color: #D4AF37;
   border: 1px solid #D4AF37;
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 0.8rem;
+  border-radius: 7px;
   font-family: "Roboto", serif;
   font-size: 0.9rem;
   display: flex;
@@ -376,8 +400,21 @@ img {
   flex-direction: column;
   gap: 1rem;
   text-align: center;
-  padding: 4rem;
-  background-color: #F5F5DC;
+  padding: 2rem;
+}
+.main__form-border {
+  border: 2px solid #D4AF37;
+  padding: 1rem;
+  border-radius: 8px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  box-shadow: 5px 5px 55px -8px rgba(0, 0, 0, 0.75);
 }
 .main__form-title {
   font-family: "Roboto", serif;
@@ -411,6 +448,8 @@ img {
   border-radius: 5px;
   font-size: 1rem;
   font-family: "Roboto", serif;
+  padding: 1rem;
+  font-weight: 300;
 }
 .main__form-box-label-texarea {
   width: 20rem;
@@ -418,6 +457,9 @@ img {
   border-radius: 5px;
   font-size: 1rem;
   font-family: "Roboto", serif;
+  padding: 1rem;
+  font-weight: 300;
+  color: #000;
 }
 .main__form-box-radio {
   display: flex;
@@ -431,15 +473,16 @@ img {
   height: 2.5rem;
   background-color: transparent;
   border: solid 1px #000;
-  color: #767676;
+  color: #000;
   font-size: 0.9rem;
   font-family: "Roboto", serif;
   border-radius: 5px;
-  text-transform: uppercase;
   padding: 0.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
+  font-weight: 300;
 }
 
 .tracking-in-expand {
@@ -636,7 +679,6 @@ img {
 
 input[type=text],
 textarea {
-  background-color: #F5F5DC; /* Color normal */
   border: 1px solid #000; /* Borde normal */
   outline: none; /* Quita el borde azul predeterminado */
   transition: 0.3s; /* Suaviza el cambio */
@@ -688,43 +730,44 @@ textarea:focus {
 }
 
 .color1 {
-  background-image: url(../img/foto-prueba.JPG);
+  background-image: url(../img/1.JPG);
   background-size: cover;
   height: 10rem;
   width: 9rem;
 }
 
 .color2 {
-  background-image: url(../img/foto-prueba.JPG);
+  background-image: url(../img/10.JPG);
   background-size: cover;
   height: 10rem;
   width: 9rem;
 }
 
 .color3 {
-  background-image: url(../img/foto-prueba.JPG);
+  background-image: url(../img/12.JPG);
   background-size: cover;
   height: 10rem;
   width: 9rem;
 }
 
 .color4 {
-  background-image: url(../img/foto-prueba.JPG);
+  background-image: url(../img/8.JPG);
   background-size: cover;
   height: 10rem;
   width: 9rem;
 }
 
 .color5 {
-  background-image: url(../img/foto-prueba.JPG);
+  background-image: url(../img/5.JPG);
   background-size: cover;
   height: 10rem;
   width: 9rem;
 }
 
 .color6 {
-  background-image: url(../img/foto-prueba.JPG);
+  background-image: url(../img/6.JPG);
   background-size: cover;
+  background-position: center;
   height: 10rem;
   width: 9rem;
 }

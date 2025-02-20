@@ -77,9 +77,34 @@ img{
         flex-direction: column;
         gap: 1.5rem;
         padding: 1rem;
+        text-align: center;
+
+        &-box-imagenes{
+            @include flex-box(center,center);
+            flex-direction: column;
+            gap: 0px;
+            width: 100%;
+            position: relative;
+        }
+        &-box-imagenes-img1{
+            height: 30rem;
+            border-radius: 10px;
+        }
+        &-box-imagenes-img2{
+            width: 19rem;
+            height: 14rem;
+            position: absolute;
+            top: 90%;  /* En relación al contenedor */
+            //left: 0%; /* Se adapta mejor a distintos tamaños */
+            //width: 50%; /* Que no dependa de píxeles fijos */
+            max-width: 200rem;
+            z-index: 2;
+            border-radius: 10px;
+        }
 
         &-title{
-            font-size: 2.3rem;
+            font-size: 2rem;
+            //font-style: italic;
             @include fontTitle;
             color: $Dorado;
         }
@@ -102,6 +127,7 @@ img{
             font-size: 1.1rem;
             word-spacing: .1rem;
             font-style: italic;
+            margin-top: 11rem;
         }
     }
 
@@ -150,9 +176,9 @@ img{
             margin-top: 2.5rem;
         }
         &-calendar{ 
-            background-color: $Beigesuave;
-            //border-top: 1px solid #B89730;
-            //border-bottom: 1px solid #B89730;
+            //background-color: $Beigesuave;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
             //border-left: 0px;
             padding: .5rem;
             font-size: .9rem;
@@ -161,7 +187,7 @@ img{
             @include flex-box(center,center);
             gap: .1rem;
             @include fontTextSecundary;
-            border-radius: 5px;
+            //border-radius: 5px;
             width: 10rem;
 
         }
@@ -223,8 +249,8 @@ img{
             text-decoration: none;
             color: $Dorado;
             border: 1px solid $Dorado;
-            padding: .5rem;
-            border-radius: 5px;
+            padding: .8rem;
+            border-radius: 7px;
             @include fontTextSecundary;
             font-size: .9rem;
             @include flex-box(center,center);
@@ -247,11 +273,11 @@ img{
 
         &-foto{
             flex: 1;
-            background-image: url(../img/templo.jpeg);
+            background-image: url(../img/recepcion-img1.jpg);
             height: 20rem;
             width: 20rem;
             background-size: cover;
-            background-position: 75%;
+            background-position: 70%;
         }
         &-title{
             font-size: 1.9rem;
@@ -276,8 +302,8 @@ img{
             text-decoration: none;
             color: $Dorado;
             border: 1px solid $Dorado;
-            padding: .5rem;
-            border-radius: 5px;
+            padding: .8rem;
+            border-radius: 7px;
             @include fontTextSecundary;
             font-size: .9rem;
             @include flex-box(center,center);
@@ -390,8 +416,23 @@ img{
         flex-direction: column;
         gap: 1rem;
         text-align: center;
-        padding: 4rem;
-        background-color: $Beigesuave;
+        padding: 2rem;
+        
+        &-border{
+            border: 2px solid $Dorado;
+            padding: 1rem;
+            border-radius: 8px;
+            //background-color: $Beigesuave;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            @include flex-box(center,center);
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+            -webkit-box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
+            box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
+        }
 
         &-title{
             @include fontTextSecundary;
@@ -426,6 +467,8 @@ img{
                     border-radius: 5px;
                     font-size: 1rem;
                     @include fontTextSecundary;
+                    padding: 1rem;
+                    font-weight: 300;
                 }
 
                 &-texarea{
@@ -434,6 +477,9 @@ img{
                     border-radius: 5px;
                     font-size: 1rem;
                     @include fontTextSecundary;
+                    padding: 1rem;
+                    font-weight: 300;
+                    color: #000;
 
                 }
             }
@@ -451,14 +497,15 @@ img{
             height: 2.5rem;
             background-color: transparent;
             border: solid 1px #000;
-            color: #767676;
+            color: #000;
             font-size: .9rem;
             @include fontTextSecundary;
             border-radius: 5px;
-            text-transform: uppercase;
+            //text-transform: uppercase;
             padding: .9rem;
             @include flex-box(center,center);
-
+            margin-top: 3rem;
+            font-weight: 300;
         }
 
     }

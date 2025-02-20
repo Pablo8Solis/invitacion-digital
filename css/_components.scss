@@ -237,7 +237,7 @@ img {
 
 input[type="text"],
 textarea {
-    background-color: $Beigesuave; /* Color normal */
+    //background-color: $Beigesuave; /* Color normal */
     border: 1px solid #000; /* Borde normal */
     outline: none; /* Quita el borde azul predeterminado */
     transition: 0.3s; /* Suaviza el cambio */
@@ -287,37 +287,38 @@ textarea:focus {
   height: 50px;
   border-radius: 15px;
 }
-.color1 { background-image:url(../img/foto-prueba.JPG);
+.color1 { background-image:url(../img/1.JPG);
   background-size: cover;
   height: 10rem;
   width: 9rem; 
 }
-.color2 { background-image:url(../img/foto-prueba.JPG);
+.color2 { background-image:url(../img/10.JPG);
   background-size: cover;
   height: 10rem; 
   width: 9rem; 
 }
 .color3 { 
-  background-image:url(../img/foto-prueba.JPG);
+  background-image:url(../img/12.JPG);
   background-size: cover;
   height: 10rem; 
   width: 9rem; 
 }
 .color4 { 
-  background-image:url(../img/foto-prueba.JPG);
+  background-image:url(../img/8.JPG);
   background-size: cover;
   height: 10rem; 
   width: 9rem; 
  }
 .color5 { 
-  background-image:url(../img/foto-prueba.JPG);
+  background-image:url(../img/5.JPG);
   background-size: cover;
   height: 10rem; 
   width: 9rem; 
  }
 .color6 {
-  background-image:url(../img/foto-prueba.JPG);
+  background-image:url(../img/6.JPG);
   background-size: cover;
+  background-position: center;
   height: 10rem; 
   width: 9rem;
 }
