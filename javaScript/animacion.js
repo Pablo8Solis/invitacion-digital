@@ -122,12 +122,12 @@ window.addEventListener("load", function () {
   { nombre: "Pablo", lugares: 2 },
   { nombre: "Ana", lugares: 3 },
   { nombre: "Juan", lugares: 1 }
-];*/
+];
 const invitados = [
   { codigo: "abc123", nombre: "Pablo", lugares: 2 },
   { codigo: "xyz789", nombre: "Ana", lugares: 3 },
   { codigo: "lmn456", nombre: "Juan", lugares: 1 }
-];
+];*/
 
 
 /*invitados.forEach(inv => {
@@ -135,9 +135,50 @@ const invitados = [
 
   console.log(enlace);
 })*/
-invitados.forEach(inv => {
-  const enlace = `https://bodamargaritayroberto.netlify.app/?codigo=${inv.codigo}`;
-  console.log(enlace);
-});
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const nombre = params.get("nombre") || "invitado";
+    const lugares = parseInt(params.get("lugares")) || 1;
+
+    document.getElementById("mensaje").innerText = 
+        `Hola, ${nombre}. Tienes ${lugares} lugar(es) reservado(s).`;
+
+        // Asignar el valor al input oculto
+    document.getElementById("lugaresReservados").value = lugares;
+
+    const opcionesAsistencia = document.getElementById("opcionesAsistencia");
+
+    // Opción para confirmar asistencia con todos los lugares asignados
+    const labelTodos = document.createElement("label");
+    labelTodos.classList.add("main__form-box-label");
+    labelTodos.innerHTML = `
+        <input class="main__form-box-label-radio" type="radio" name="asistencia" value="Todos asistirán" required>
+        Asistiremos todos (${lugares} persona(s))
+    `;
+    opcionesAsistencia.appendChild(labelTodos);
+
+    // Si tiene más de 1 lugar, dar opción de asistir con menos
+    if (lugares > 1) {
+        for (let i = 1; i < lugares; i++) {
+            const labelParcial = document.createElement("label");
+            labelParcial.classList.add("main__form-box-label");
+            labelParcial.innerHTML = `
+                <input class="main__form-box-label-radio" type="radio" name="asistencia" value="${i} persona(s) asistirán">
+                Solo asistiremos ${i} persona(s)
+            `;
+            opcionesAsistencia.appendChild(labelParcial);
+        }
+    }
+
+    // Opción para no asistir
+    const labelNo = document.createElement("label");
+    labelNo.classList.add("main__form-box-label");
+    labelNo.innerHTML = `
+        <input class="main__form-box-label-radio" type="radio" name="asistencia" value="No asistiremos">
+        No podremos asistir
+    `;
+    opcionesAsistencia.appendChild(labelNo);
+});
 

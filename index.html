@@ -190,28 +190,22 @@
                     <h2 class="main__form-title">Confirmar <br> Asistencia</h2>
                     <p class="main__form-text">Por favor, confirma tu asistencia <br>
                     ¡Esperamos que estés allí!</p>
-                    <p id="mensaje"></p>
+                    <p id="mensaje" value="x"></p>
 
                     <form class="main__form-box"
                         action="https://formspree.io/f/xkgozpoz"
                         method="POST">
-                    <div class="main__form-box-radio">
-                        <label class="main__form-box-label">
-                            <input class="main__form-box-label-radio" type="radio" name="asistencia"required value="si asistirá">
-                            Sí, allí estaré
-                        </label>
-
-                        <label class="main__form-box-label">
-                            <input class="main__form-box-label-radio" type="radio" name="asistencia"required value="no asistirá">
-                            No podré asistir
-                        </label>
-                    </div>
+                        <div class="main__form-box-radio" id="opcionesAsistencia">
+                            <p>Por favor, confirma cuántos lugares ocuparás:</p>
+                        </div>
                         <label class="main__form-box-label">
                             <input class="main__form-box-label-input-box" type="text" name="nombre" placeholder="Nombre de los invitados" required>
                         </label>
                         <label class="main__form-box-label">
                             <textarea class="main__form-box-label-texarea" name="mensaje" placeholder="Mensaje o frase para los novios:" required></textarea>
                         </label>
+                        <input type="hidden" name="lugares_reservados" id="lugaresReservados">
+
                         
                         <button class="main__form-button" type="submit">Enviar Respuesta</button>
                     </form>
@@ -258,7 +252,14 @@
             } else {
                 document.getElementById("mensaje").innerText = 
                     "Código inválido o no registrado.";
-            }
+                    
+            } 
+            invitados.forEach(inv => {
+                const enlace = `https://bodamargaritayroberto.netlify.app/?codigo=${inv.codigo}`;
+                console.log(enlace);
+            });
+
+
     
             // Limpiar la URL eliminando los parámetros
             window.history.replaceState({}, document.title, window.location.pathname);
