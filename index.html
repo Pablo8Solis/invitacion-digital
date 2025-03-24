@@ -220,7 +220,7 @@
 
         </main>
     </div>    
-    <script>
+    <!--<script>
         document.addEventListener("DOMContentLoaded", function () {
             // Obtener los parámetros de la URL
             const params = new URLSearchParams(window.location.search);
@@ -234,7 +234,37 @@
             // Limpiar la URL eliminando los parámetros
             window.history.replaceState({}, document.title, window.location.pathname);
         });
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lista de invitados con códigos únicos
+            const invitados = [
+                { codigo: "abc123", nombre: "Pablo", lugares: 2 },
+                { codigo: "xyz789", nombre: "Ana", lugares: 3 },
+                { codigo: "lmn456", nombre: "Juan", lugares: 1 }
+            ];
+    
+            // Obtener el código de la URL
+            const params = new URLSearchParams(window.location.search);
+            const codigo = params.get("codigo");
+    
+            // Buscar al invitado por su código
+            const invitado = invitados.find(inv => inv.codigo === codigo);
+    
+            // Mostrar mensaje si el código es válido
+            if (invitado) {
+                document.getElementById("mensaje").innerText = 
+                    `Hola, ${invitado.nombre}. Tienes ${invitado.lugares} lugar(es) reservado(s).`;
+            } else {
+                document.getElementById("mensaje").innerText = 
+                    "Código inválido o no registrado.";
+            }
+    
+            // Limpiar la URL eliminando los parámetros
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
     </script>
+    
     
 </body>
 </html>

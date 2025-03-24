@@ -118,14 +118,26 @@ window.addEventListener("load", function () {
 });
 
 
-const invitados = [
+/*const invitados = [
   { nombre: "Pablo", lugares: 2 },
   { nombre: "Ana", lugares: 3 },
   { nombre: "Juan", lugares: 1 }
+];*/
+const invitados = [
+  { codigo: "abc123", nombre: "Pablo", lugares: 2 },
+  { codigo: "xyz789", nombre: "Ana", lugares: 3 },
+  { codigo: "lmn456", nombre: "Juan", lugares: 1 }
 ];
 
-invitados.forEach(inv => {
-  const enlace = `https://bodamargaritayroberto.netlify.app/?nombre=${encodeURIComponent(inv.nombre)}&lugares=${inv.lugares}`;
+
+/*invitados.forEach(inv => {
+  const enlace = `https://bodamargaritayroberto.netlify.app/?nombre=${encodeURIComponent(inv.nombre)}&lugares=${inv.lugares}`; 
+
   console.log(enlace);
-})
+})*/
+invitados.forEach(inv => {
+  const enlace = `https://bodamargaritayroberto.netlify.app/?codigo=${inv.codigo}`;
+  console.log(enlace);
+});
+
 
