@@ -237,94 +237,76 @@
                 { codigo: "xyz789", nombre: "Ana", lugares: 3 },
                 { codigo: "lmn456", nombre: "Juan", lugares: 1 }
             ];
-    
+        
             // Obtener el código de la URL
             const params = new URLSearchParams(window.location.search);
             const codigo = params.get("codigo");
-    
+
+            invitados.forEach(inv => {
+                const enlace = `https://bodamargaritayroberto.netlify.app/?nombre=${encodeURIComponent(inv.nombre)}&lugares=${inv.lugares}`; 
+
+                console.log(enlace);
+            })
+        
             // Buscar al invitado por su código
             const invitado = invitados.find(inv => inv.codigo === codigo);
-    
-            // Mostrar mensaje si el código es válido
+        
+            // Asegurar que el mensaje se actualiza correctamente
+            const mensajeElemento = document.getElementById("mensaje");
+            const opcionesAsistencia = document.getElementById("opcionesAsistencia");
+            const inputLugares = document.getElementById("lugaresReservados");
+        
             if (invitado) {
-                document.getElementById("mensaje").innerText = 
-                    `Hola, ${invitado.nombre}. Tienes ${invitado.lugares} lugar(es) reservado(s).`;
+                mensajeElemento.innerText = `Hola, ${invitado.nombre}. Tienes ${invitado.lugares} lugar(es) reservado(s).`;
+        
+                // Asignar el número de lugares al input oculto
+                if (inputLugares) {
+                    inputLugares.value = invitado.lugares;
+                }
+        
+                // Limpiar opciones previas y generar las nuevas
+                if (opcionesAsistencia) {
+                    opcionesAsistencia.innerHTML = "";
+        
+                    // Opción para confirmar asistencia con todos los lugares asignados
+                    const labelTodos = document.createElement("label");
+                    labelTodos.classList.add("main__form-box-label");
+                    labelTodos.innerHTML = `
+                        <input class="main__form-box-label-radio" type="radio" name="asistencia" value="Todos asistirán" required>
+                        Asistiremos todos (${invitado.lugares} persona(s))
+                    `;
+                    opcionesAsistencia.appendChild(labelTodos);
+        
+                    // Si tiene más de 1 lugar, dar opción de asistir con menos
+                    if (invitado.lugares > 1) {
+                        for (let i = 1; i < invitado.lugares; i++) {
+                            const labelParcial = document.createElement("label");
+                            labelParcial.classList.add("main__form-box-label");
+                            labelParcial.innerHTML = `
+                                <input class="main__form-box-label-radio" type="radio" name="asistencia" value="${i} persona(s) asistirán">
+                                Solo asistiremos ${i} persona(s)
+                            `;
+                            opcionesAsistencia.appendChild(labelParcial);
+                        }
+                    }
+        
+                    // Opción para no asistir
+                    const labelNo = document.createElement("label");
+                    labelNo.classList.add("main__form-box-label");
+                    labelNo.innerHTML = `
+                        <input class="main__form-box-label-radio" type="radio" name="asistencia" value="No asistiremos">
+                        No podremos asistir
+                    `;
+                    opcionesAsistencia.appendChild(labelNo);
+                }
             } else {
-                document.getElementById("mensaje").innerText = 
-                    "Código inválido o no registrado.";
-                    
-            } 
-            invitados.forEach(inv => {
-                const enlace = `https://bodamargaritayroberto.netlify.app/?codigo=${inv.codigo}`;
-                console.log(enlace);
-            });
-
-
-    
+                mensajeElemento.innerText = "Código inválido o no registrado.";
+            }
+        
             // Limpiar la URL eliminando los parámetros
             window.history.replaceState({}, document.title, window.location.pathname);
         });
-    </script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Obtener los parámetros de la URL
-        const params = new URLSearchParams(window.location.search);
-        const nombre = params.get("nombre") || "invitado";
-        const lugares = parseInt(params.get("lugares")) || 1;
-    
-        // Asegurar que el mensaje se actualiza correctamente
-        const mensajeElemento = document.getElementById("mensaje");
-        if (mensajeElemento) {
-            mensajeElemento.innerText = `Hola, ${nombre}. Tienes ${lugares} lugar(es) reservado(s).`;
-        }
-    
-        // Asignar el valor al input oculto para enviarlo en el formulario
-        const inputLugares = document.getElementById("lugaresReservados");
-        if (inputLugares) {
-            inputLugares.value = lugares;
-        }
-    
-        // Generar dinámicamente las opciones de asistencia
-        const opcionesAsistencia = document.getElementById("opcionesAsistencia");
-        if (opcionesAsistencia) {
-            opcionesAsistencia.innerHTML = ''; // Limpiar antes de agregar opciones
-    
-            // Opción para confirmar asistencia con todos los lugares asignados
-            const labelTodos = document.createElement("label");
-            labelTodos.classList.add("main__form-box-label");
-            labelTodos.innerHTML = `
-                <input class="main__form-box-label-radio" type="radio" name="asistencia" value="Todos asistirán" required>
-                Asistiremos todos (${lugares} persona(s))
-            `;
-            opcionesAsistencia.appendChild(labelTodos);
-    
-            // Si tiene más de 1 lugar, dar opción de asistir con menos
-            if (lugares > 1) {
-                for (let i = 1; i < lugares; i++) {
-                    const labelParcial = document.createElement("label");
-                    labelParcial.classList.add("main__form-box-label");
-                    labelParcial.innerHTML = `
-                        <input class="main__form-box-label-radio" type="radio" name="asistencia" value="${i} persona(s) asistirán">
-                        Solo asistiremos ${i} persona(s)
-                    `;
-                    opcionesAsistencia.appendChild(labelParcial);
-                }
-            }
-    
-            // Opción para no asistir
-            const labelNo = document.createElement("label");
-            labelNo.classList.add("main__form-box-label");
-            labelNo.innerHTML = `
-                <input class="main__form-box-label-radio" type="radio" name="asistencia" value="No asistiremos">
-                No podremos asistir
-            `;
-            opcionesAsistencia.appendChild(labelNo);
-        }
-    });
-    </script>
-    
-    
-    
+        </script>
+        
 </body>
 </html>
