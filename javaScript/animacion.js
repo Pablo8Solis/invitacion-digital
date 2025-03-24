@@ -116,3 +116,16 @@ window.addEventListener("load", function () {
     document.getElementById("content").classList.remove("hidden");
   }, 2000); // Espera a que termine la animación
 });
+
+
+const invitados = [
+  { nombre: "Pablo", lugares: 2 },
+  { nombre: "Ana", lugares: 3 },
+  { nombre: "Juan", lugares: 1 }
+];
+
+invitados.forEach(inv => {
+  const enlace = `https://bodamargaritayroberto.netlify.app/?nombre=${encodeURIComponent(inv.nombre)}&lugares=${inv.lugares}`;
+  console.log(enlace);
+})
+
