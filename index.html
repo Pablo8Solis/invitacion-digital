@@ -192,7 +192,7 @@
                     ¡Esperamos que estés allí!</p>
                     <p id="mensaje" value="x"></p>
 
-                    <form class="main__form-box"
+                    <form id="miFormulario" class="main__form-box"
                         action="https://formspree.io/f/xkgozpoz"
                         method="POST">
                         <div class="main__form-box-radio" id="opcionesAsistencia">
@@ -231,22 +231,23 @@
     </script> -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Lista de invitados con códigos únicos
             const invitados = [
-                { codigo: "abc123", nombre: "Pablo", lugares: 2 },
-                { codigo: "xyz789", nombre: "Ana", lugares: 3 },
-                { codigo: "lmn456", nombre: "Juan", lugares: 1 }
-            ];
+            { codigo: "abc123", nombre: "Pablo", lugares: 2 },
+            { codigo: "xyz789", nombre: "Ana", lugares: 3 },
+            { codigo: "lmn456", nombre: "Juan", lugares: 1 },
+            { codigo: "pqr321", nombre: "Karla", lugares: 5 }
+        ];
+
+        invitados.forEach(inv => {
+        const enlace = `https://bodamargaritayroberto.netlify.app/?codigo=${inv.codigo}`;
+        console.log(enlace);
+        });
         
             // Obtener el código de la URL
             const params = new URLSearchParams(window.location.search);
             const codigo = params.get("codigo");
 
-            invitados.forEach(inv => {
-                const enlace = `https://bodamargaritayroberto.netlify.app/?nombre=${encodeURIComponent(inv.nombre)}&lugares=${inv.lugares}`; 
-
-                console.log(enlace);
-            })
+    
         
             // Buscar al invitado por su código
             const invitado = invitados.find(inv => inv.codigo === codigo);
@@ -301,6 +302,13 @@
                 }
             } else {
                 mensajeElemento.innerText = "Código inválido o no registrado.";
+                mensajeElemento.style.color ="red";
+
+                // Prevenir el envío del formulario si el código es inválido
+                document.getElementById("miFormulario").addEventListener('submit', function(event) {
+                event.preventDefault();  // Previene el envío del formulario
+                alert("Por favor, ingresa un código válido para confirmar tu asistencia.");
+                });
             }
         
             // Limpiar la URL eliminando los parámetros
