@@ -369,3 +369,12 @@ body {
 .hidden {
   display: none;
 }
+
+//Mensaje de error de formulario
+#mensaje{
+  @include fontText;
+  font-weight: bold;
+}
+.opcionesAsistencia-style{
+  @include fontText;
+}

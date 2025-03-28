@@ -429,14 +429,15 @@ img{
             flex-direction: column;
             gap: 1rem;
             text-align: center;
-            -webkit-box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
-            -moz-box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
-            box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
+            //-webkit-box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
+            //-moz-box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
+            //box-shadow: 5px 5px 55px -8px rgba(0,0,0,0.75);
         }
 
         &-title{
-            @include fontTextSecundary;
-            font-size: 2rem
+            @include fontTitle;
+            font-size: 2rem;
+            padding-top: 1rem;
         }
 
         &-text{
@@ -449,7 +450,7 @@ img{
             @include flex-box(center,center);
             flex-direction: column;
             gap: 0.5rem;
-            padding-top: 1.5rem;
+            //padding-top: 1.5rem;
 
             &-label{
                 @include fontTextSecundary;
