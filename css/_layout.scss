@@ -489,7 +489,7 @@ img{
         }
         &-box-radio{
             @include flex-box(center,center);
-            gap: 2rem;
+            gap: .9rem;
             margin-bottom: 2rem;
         }
 
