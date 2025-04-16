@@ -380,6 +380,7 @@ img{
         width: 100%;
         padding-top: 3rem;
         padding-bottom: 3rem;
+        margin-bottom: 4rem;
         
 
         &-video{
@@ -417,6 +418,7 @@ img{
         gap: 1rem;
         text-align: center;
         padding: 2rem;
+        margin-bottom: 3rem;
         
         &-border{
             border: 2px solid $Dorado;
@@ -512,4 +514,49 @@ img{
     }
 
 
+}
+
+.footer{
+    @include flex-box(center,center);
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 4rem;
+
+    &__name{
+        @include flex-box(center,center);
+        gap: .5rem;
+    
+        
+        &-span{
+            width: 1px;
+            height: 25px;
+            background-color: rgb(99, 97, 97);
+        }
+
+    }
+
+    &__name-vime{
+        @include flex-box(center,center);
+        flex-direction: column;
+        gap: .5rem;
+
+        &:last-child{
+            color: #434343;
+            @include fontTitle
+        }
+
+    }
+
+    &__names{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        @include fontTitle;
+        color: #434343;
+
+        &:last-child{
+            color: $Dorado;
+            text-decoration: none;
+        }
+
+    }
 }
